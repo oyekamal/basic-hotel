@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path
 from app import views
 from customauth import views as auth_view
+from managment import views as managment_view
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -34,11 +35,11 @@ urlpatterns = [
     path("staff/login", auth_view.staff_log_sign_page, name="staffloginpage"),
     path("staff/signup", auth_view.staff_sign_up, name="staffsignup"),
     path("logout", auth_view.logoutuser, name="logout"),
-    path("staff/panel", views.panel, name="staffpanel"),
-    path("staff/allbookings", views.all_bookings, name="allbookigs"),
-    path("staff/panel/add-new-location", views.add_new_location, name="addnewlocation"),
-    path("staff/panel/edit-room", views.edit_room),
-    path("staff/panel/add-new-room", views.add_new_room, name="addroom"),
-    path("staff/panel/edit-room/edit", views.edit_room),
-    path("staff/panel/view-room", views.view_room),
+    path("staff/panel", managment_view.panel, name="staffpanel"),
+    path("staff/allbookings", managment_view.all_bookings, name="allbookigs"),
+    path("staff/panel/add-new-location", managment_view.add_new_location, name="addnewlocation"),
+    path("staff/panel/edit-room", managment_view.edit_room),
+    path("staff/panel/add-new-room", managment_view.add_new_room, name="addroom"),
+    path("staff/panel/edit-room/edit", managment_view.edit_room),
+    path("staff/panel/view-room", managment_view.view_room),
 ]

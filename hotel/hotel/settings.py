@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     # app
     "app",
     "customauth",
+    "managment",
+    # packages
     "mathfilters",
 ]
 
