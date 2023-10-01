@@ -2,6 +2,20 @@
     {% block title %}Hotel Naif
     {% endblock title %}
     {% block body %}
+    <style>
+        .table-container {
+            padding: 20px; /* Add padding from left and right */
+        }
+        .img-container {
+            display: flex;
+            justify-content: space-between;
+        }
+        .img-container img {
+            width: 100%; /* Make all images the same size and responsive */
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
      <!--Booking Section starts here-->
     <section>
         <div class="container-fluid py-5 px-5 ">
@@ -79,9 +93,7 @@
 
     <h3 class="text-center text-dark">Rooms Types</h3>
 
-    <!--Room tables starts here-->
-    <div class="container-fluid px-0" style="border:1px solid red">
-
+    <div class="container-fluid px-0 border border-danger table-container">
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -91,62 +103,28 @@
             </thead>
             <tbody>
                 <tr>
-                    <td class="text-center">
-                        <!--Room details-->
+                    <td>
                         <h1>Budget</h1>
-                        <p>Price:$55/day</p>
-
-                        <p>Size :30 ft</p>
-                        <p>Allowed Guests :Max person 3</p>
-
-                        <p>Amenities :Wifi,Tv,Bathroom</p>
-                        <p> Near By :Sea View</p>
+                        <p>Price: $55/day</p>
+                        <p>Size: 30 ft</p>
+                        <p>Allowed Guests: Max person 3</p>
+                        <p>Amenities: Wifi, TV, Bathroom</p>
+                        <p>Near By: Sea View</p>
                     </td>
-                    <td class="text-center">
-                        <!--Room Images-->
-                        <img src="https://a0.muscache.com/im/pictures/miso/Hosting-716706403752860815/original/400d5063-23d0-4e83-a16f-0a89b8f5cae0.jpeg" alt="" class="img-fluid pt-4">
+                    <td>
+                        <div class="img-container">
+                            <div class="col-4">
+                                <img src="https://a0.muscache.com/im/pictures/miso/Hosting-716706403752860815/original/400d5063-23d0-4e83-a16f-0a89b8f5cae0.jpeg" alt="" class="img-fluid">
+                            </div>
+                            <div class="col-4">
+                                <img src="https://a0.muscache.com/im/pictures/miso/Hosting-873033346108536407/original/11f43171-dbed-4c25-bfa6-ce3e3099650a.jpeg" alt="" class="img-fluid">
+                            </div>
+                            <div class="col-4">
+                                <img src="https://a0.muscache.com/im/pictures/50871040-1c2d-4a81-a86b-84a4f05a5832.jpg" alt="" class="img-fluid">
+                            </div>
+                        </div>
                     </td>
-
                 </tr>
-                <tr>
-                    <td class="text-center">
-                        <!--Room details-->
-                        <h1>Premium</h1>
-                        <p>Price:$55/day</p>
-
-                        <p>Size :30 ft</p>
-                        <p>Allowed Guests :Max person 3</p>
-
-                        <p>Amenities :Wifi,Tv,Bathroom</p>
-                        <p> Near By :Sea View</p>
-                    </td>
-                    <td class="text-center">
-                        <!--Room Images-->
-                        <img src="https://a0.muscache.com/im/pictures/miso/Hosting-873033346108536407/original/11f43171-dbed-4c25-bfa6-ce3e3099650a.jpeg"
-                            alt="" class="img-fluid pt-4">
-                    </td>
-
-                </tr>
-                <tr>
-                    <td class="text-center">
-                        <!--Room details-->
-                        <h1>Deluxe</h1>
-                        <p>Price:$55/day</p>
-
-                        <p>Size :30 ft</p>
-                        <p>Allowed Guests :Max person 3</p>
-
-                        <p>Amenities :Wifi,Tv,Bathroom</p>
-                        <p> Near By :Sea View</p>
-                    </td>
-                    <td class="text-center">
-                        <!--Room Images-->
-                        <img src="https://a0.muscache.com/im/pictures/50871040-1c2d-4a81-a86b-84a4f05a5832.jpg"
-                            alt="" class="img-fluid pt-4">
-                    </td>
-
-                </tr>
-
             </tbody>
         </table>
     </div>
