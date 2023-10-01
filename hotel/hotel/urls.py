@@ -17,22 +17,23 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from app import views
+from customauth import views as auth_view
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", views.home, name="HomePage"),
     path("about", views.about_us, name="aboutpage"),
     path("contact", views.contact, name="contact"),
-    path("user", views.user_log_sign_page, name="userloginpage"),
-    path("user/login", views.user_log_sign_page, name="userloginpage"),
+    path("user", auth_view.user_log_sign_page, name="userloginpage"),
+    path("user/login", auth_view.user_log_sign_page, name="userloginpage"),
     path("user/bookings", views.user_bookings, name="dashboard"),
     path("user/book-room", views.book_room_page, name="bookroompage"),
     path("user/book-room/book", views.book_room, name="bookroom"),
-    path("user/signup", views.user_sign_up, name="usersignup"),
-    path("staff/", views.staff_log_sign_page, name="staffloginpage"),
-    path("staff/login", views.staff_log_sign_page, name="staffloginpage"),
-    path("staff/signup", views.staff_sign_up, name="staffsignup"),
-    path("logout", views.logoutuser, name="logout"),
+    path("user/signup", auth_view.user_sign_up, name="usersignup"),
+    path("staff/", auth_view.staff_log_sign_page, name="staffloginpage"),
+    path("staff/login", auth_view.staff_log_sign_page, name="staffloginpage"),
+    path("staff/signup", auth_view.staff_sign_up, name="staffsignup"),
+    path("logout", auth_view.logoutuser, name="logout"),
     path("staff/panel", views.panel, name="staffpanel"),
     path("staff/allbookings", views.all_bookings, name="allbookigs"),
     path("staff/panel/add-new-location", views.add_new_location, name="addnewlocation"),
