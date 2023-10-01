@@ -15,9 +15,9 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from app import views
-from customauth import views as auth_view
+# from customauth import views as auth_view
 from managment import views as managment_view
 
 urlpatterns = [
@@ -25,16 +25,10 @@ urlpatterns = [
     path("", views.home, name="HomePage"),
     path("about", views.about_us, name="aboutpage"),
     path("contact", views.contact, name="contact"),
-    path("user", auth_view.user_log_sign_page, name="userloginpage"),
-    path("user/login", auth_view.user_log_sign_page, name="userloginpage"),
+    path("", include('customauth.urls')),
     path("user/bookings", views.user_bookings, name="dashboard"),
     path("user/book-room", views.book_room_page, name="bookroompage"),
     path("user/book-room/book", views.book_room, name="bookroom"),
-    path("user/signup", auth_view.user_sign_up, name="usersignup"),
-    path("staff/", auth_view.staff_log_sign_page, name="staffloginpage"),
-    path("staff/login", auth_view.staff_log_sign_page, name="staffloginpage"),
-    path("staff/signup", auth_view.staff_sign_up, name="staffsignup"),
-    path("logout", auth_view.logoutuser, name="logout"),
     path("staff/panel", managment_view.panel, name="staffpanel"),
     path("staff/allbookings", managment_view.all_bookings, name="allbookigs"),
     path("staff/panel/add-new-location", managment_view.add_new_location, name="addnewlocation"),
